@@ -76,9 +76,9 @@ def rubika_send_file(chat_id, file_path, caption):
     return rubika_request("sendFile", {"chat_id": chat_id, "file_id": file_id, "text": caption})
 
 def deliver_to_rubika(record, folder):
-   chat_id = CHAT_ID
+    chat_id = CHAT_ID
     if not chat_id:
-        raise RuntimeError("chat_id در bot_config.json وارد نشده است.")
+        raise RuntimeError("CHAT_ID در تنظیمات Render وارد نشده است.")
     summary = (
         "🖨 سفارش جدید کافی‌نت نوید\n"
         f"کد پیگیری: {record['order_id']}\n"
