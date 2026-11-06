@@ -173,7 +173,7 @@ class H(BaseHTTPRequestHandler):
         )
 
 if __name__ == "__main__":
-    print("Kafinet Navid: http://127.0.0.1:5000")
+    port = int(os.environ.get("PORT", "5000"))
+    print(f"Kafinet Navid: http://0.0.0.0:{port}")
     print("برای توقف Ctrl+C را بزنید.")
-   port = int(os.environ.get("PORT", "5000"))
-ThreadingHTTPServer(("0.0.0.0", port), H).serve_forever()
+    ThreadingHTTPServer(("0.0.0.0", port), H).serve_forever()
